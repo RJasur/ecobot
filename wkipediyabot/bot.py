@@ -6,7 +6,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 
-# Tokenni bu yerga qo'ying
+# Tokenni qoyadigan joy
 API_TOKEN = "API_TOKEN"
 bot = Bot(token=API_TOKEN)
 
@@ -16,7 +16,7 @@ dp = Dispatcher()
 @dp.message(CommandStart())
 async def command_start_handler(message: Message):
     """/start komandasi uchun"""
-    await message.answer("Salom! Men yangi aiogram 3.x botiman!")
+    await message.answer("Salom!\nMen yangi eco  botiman!")
 
 @dp.message(Command("help"))
 async def command_help_handler(message: Message):
@@ -40,4 +40,5 @@ async def main():
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
     asyncio.run(main())
